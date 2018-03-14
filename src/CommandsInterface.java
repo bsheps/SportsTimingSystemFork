@@ -1,3 +1,7 @@
+/**
+ * @author bshepard
+ * Interface to connect with the chronotimer. Functions as a facade.
+ */
 public interface CommandsInterface {
 	void CLR(int bibNumber); // remove the competitor from queue
 	void CONN(String sensorType, int channel); // connect a sensor

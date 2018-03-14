@@ -23,31 +23,26 @@ public class ChronoTimer implements CommandsInterface {
 	ArrayList<Queue<Racer>> _storageUnit;
 	ArrayList<String> _storageUnitEventName;
 
-	@Override
 	public void CLR(int bibNumber) {
 		// TODO Auto-generated method stub
 
 	}
 
-	@Override
 	public void CONN(String sensorType, int channel) {
 		_print.printThis(Time.getCurrentTimeString()+" " +sensorType+ (chan.connectSensor(sensorType, channel)? " successfully connected.": " connection unsucessful"));
 
 	}
 
-	@Override
 	public void DISC(int channel2disconnect) {
 		_print.printThis(Time.getCurrentTimeString()+" Sensor at channel " +
 				channel2disconnect + (chan.disconnectSensor(channel2disconnect)? " disconnected successfully.": " disconnect failed."));
 	}
 
-	@Override
 	public void DNF() {
 		_event.dnf();
 		_print.printThis(Time.getCurrentTimeString()+ " Setting DNF for next trigger");
 	}
 
-	@Override
 	public void ENDRUN() {
 		if(!_raceInSession) _print.printThis(Time.getCurrentTimeString() + " ENDRUN FAILED - NO RACE IN SESSION");
 		else {
@@ -69,7 +64,6 @@ public class ChronoTimer implements CommandsInterface {
 			_print.printThis("ERROR: INVALID EVENT NAME");
 	}
 
-	@Override
 	public void EXPORT(int runNumber) {
 		Gson exportProxy = new Gson();
 		String exportFilename = "RUN"+runNumber+".txt";
@@ -86,14 +80,12 @@ public class ChronoTimer implements CommandsInterface {
 		
 	}
 
-	@Override
 	public void FINISH() {
 		_event.trigger(2);
 		_print.printThis(Time.getCurrentTimeString()+ " Triggered channel: 2");
 
 	}
 
-	@Override
 	public void NEWRUN() {
 		if(_raceInSession) _print.printThis(Time.getCurrentTimeString()+ " ERROR RACE IN SESSION: End current run before starting a NEWRUN.");
 		else{
@@ -137,7 +129,7 @@ public class ChronoTimer implements CommandsInterface {
 		}	
 	}
 
-	@Override
+	
 	public void PRINT(int runNumber) {
 		_print.printThis("Printing " + _storageUnitEventName.get(runNumber-1) + runNumber);
 		Queue<Racer> temp = _storageUnit.get(runNumber-1);
@@ -147,48 +139,43 @@ public class ChronoTimer implements CommandsInterface {
 
 	}
 
-	@Override
+	
 	public void RESET() {
 		// TODO Auto-generated method stub
-
 	}
 
-	@Override
+	
 	public void TIME(String time) {
 		Time.setTime(time);
 		Time.startTime();
 		_print.printThis(Time.getCurrentTimeString() + " TIME SET");
-
 	}
 
-	@Override
+	
 	public void TOG(int channelNumber) {
 		_print.printThis(Time.getCurrentTimeString()+" Channel "+channelNumber+" was " + (chan.Toggle(channelNumber)? "Enabled" : "Disabled"));
 	}
 
 
 	//could we pass on the event type because this is only for indrun 
-	@Override
+	
 	public void TRIG(int channelNumber) {
 		_print.printThis(Time.getCurrentTimeString()+ " Trigger channel "+channelNumber );
 		if(chan.isChannelEnabled(channelNumber) && _raceInSession) _event.trigger(channelNumber);	
 		// else do nothing, channel is disabled or a race is not in session
 	}
-
-	@Override
+	
 	public void START() {
 		_event.trigger(1);
 		_print.printThis(Time.getCurrentTimeString()+ " START");
 
 	}
 
-	@Override
 	public void SWAP() {
 		if(_storageUnitEventName.get(_storageUnitEventName.size()-1).equals("IND")) _event.swap();
 		_print.printThis(Time.getCurrentTimeString() + " Swapping racers");
 	}
 
-	@Override
 	public void PRINTERPOWER() {
 		_print.PRINTERPOWER();
 		_print.printThis(Time.getCurrentTimeString() + " PRINTER POWER BUTTON");

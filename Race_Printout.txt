@@ -58,3 +58,23 @@
 12:01:30.00 Exporting run 2
 12:01:30.00 Exporting run 3
 12:01:30.00 POWERING OFF- PENDING ITEMS:
+12:02:43.00 PRINTER POWER BUTTON
+12:02:45.00 Ending run
+12:03:33.03 Exporting run 1
+12:01:30.00 TIME SET
+12:01:34.00 starting PARIND
+12:01:44.00 racer created with bib: 272
+12:01:46.00 racer created with bib: 123
+12:01:48.00 racer created with bib: 111
+12:01:52.00 Trigger channel 1
+12:01:54.00 Trigger channel 3
+12:01:56.00 Trigger channel 3
+12:01:58.00 Trigger channel 1
+12:02:25.00 Trigger channel 2
+12:02:32.00 Trigger channel 2
+12:02:33.00 Trigger channel 4
+12:02:41.00 Trigger channel 4
+12:02:47.00 PRINTER POWER BUTTON
+12:02:50.00 Exporting run 2
+12:02:52.00 Exporting run 3
+12:02:55.00 POWERING OFF- PENDING ITEMS:

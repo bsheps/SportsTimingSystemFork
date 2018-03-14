@@ -29,10 +29,10 @@ public class Printer {
 	public void PrinterRest() throws IOException{
 		printer = new PrintWriter("Race_Printout.txt");
 	}
-	/**
-	 * 
-	 * @param message - maybe the racer's name?
-	 */
+/**
+ * Print the eventlog to the console and (if the power is on) print a paper receipt
+ * @param message
+ */
 	public void printThis(String message) {
 		System.out.println(message);
 		if(_powerOn) {

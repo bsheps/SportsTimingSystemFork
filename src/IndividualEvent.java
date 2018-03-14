@@ -1,6 +1,9 @@
 import java.util.LinkedList;
 import java.util.Queue;
-
+/**
+ * @author bshepard
+ * IND event, used channels 1 (start), 2 (end)
+ */
 public class IndividualEvent implements EventInterface{
 	Queue<Racer> WaitingToRace = (Queue<Racer>) new LinkedList<Racer>(),
 			inTheRace = (Queue<Racer>) new LinkedList<Racer>(),
@@ -22,12 +25,10 @@ public class IndividualEvent implements EventInterface{
 				Racer n = new Racer("noName");
 				n.startRace(Time.getCurrentTime());
 				inTheRace.add(n);
-				//print.printThis(" Channel " + chNum+ " triggered at " +Time.time2formattedString(Time.getCurrentTime()) + " for racer: noName");
 			}
 			else {
 				Racer x = WaitingToRace.remove();
 				x.startRace(Time.getCurrentTime());
-				//print.printThis(" Channel " + chNum+ " triggered at " +Time.time2formattedString(Time.getCurrentTime()) + " for racer: " +x._bibNum);
 				inTheRace.add(x);
 				x = null;
 			}
@@ -41,7 +42,6 @@ public class IndividualEvent implements EventInterface{
 			else {
 				Racer y = inTheRace.remove();
 				y.finishRace(Time.getCurrentTime());
-				//print.printThis(" Channel " + chNum+ " triggered at " +Time.time2formattedString(Time.getCurrentTime()) + " for racer: " +y._bibNum);
 				finishers.add(y);
 			}
 		}
@@ -64,7 +64,9 @@ public class IndividualEvent implements EventInterface{
 		dnfracer = true;
 		
 	}
-	
+	/**
+	 * swap the top 2 racer in inTheRace queue
+	 */
 	public void swap() {
 		Racer tm = null;
 		if(inTheRace.size() <2) {/*can't swap*/}
