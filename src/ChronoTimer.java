@@ -163,7 +163,7 @@ public class ChronoTimer implements CommandsInterface {
 
 	@Override
 	public void TOG(int channelNumber) {
-		_print.printThis(Time.getCurrentTimeString()+" Channel "+channelNumber+" was" + (chan.Toggle(channelNumber)? "Enabled" : "Disabled"));
+		_print.printThis(Time.getCurrentTimeString()+" Channel "+channelNumber+" was " + (chan.Toggle(channelNumber)? "Enabled" : "Disabled"));
 	}
 
 

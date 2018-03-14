@@ -52,6 +52,8 @@ public class Simulator{
 	 * @throws IOException
 	 */
 	private void generalParser(String[] tokens) throws IOException {
+		Time.setTime(tokens[0]);
+		Time.startTime();
 		switch(tokens[1]){
 		case "POWER":
 			ct.POWER();
