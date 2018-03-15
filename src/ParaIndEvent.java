@@ -3,7 +3,7 @@ import java.util.Queue;
 
 /**
  * @author faassad
- * channel 1,3 is start, channel 2,4 is for finish 
+ * channels12 is start, channels24 is for finish 
  */
 
 public class ParaIndEvent implements EventInterface{
