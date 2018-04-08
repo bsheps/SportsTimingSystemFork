@@ -10,13 +10,15 @@ import java.util.ArrayList;
 import java.awt.event.ActionEvent;
 import net.miginfocom.swing.MigLayout;
 
-import java.awt.Color;
+import javax.swing.JToggleButton;
+import java.awt.TextArea;
 
 public class GUI {
 
 	private JFrame frame;
 	private ArrayList<JButton> JButtons;
 	private ArrayList<JRadioButton> RButtons;
+	private ArrayList<JToggleButton> TGBUttons;
 	private ChronoTimer ct;
 
 	/**
@@ -42,6 +44,7 @@ public class GUI {
 		ct = new ChronoTimer();
 		JButtons = new ArrayList<JButton>();
 		RButtons = new ArrayList<JRadioButton>();
+		TGBUttons = new ArrayList<JToggleButton>();
 		initialize();
 	}
 
@@ -50,21 +53,21 @@ public class GUI {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.setBounds(100, 100, 737, 463);
+		frame.setBounds(100, 100, 737, 500);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		frame.setTitle("ChronoTimer");
 
 		frame.setResizable(false);
 
-		JRadioButton ch_1 = new JRadioButton("ch1");
+		JRadioButton ch_1 = new JRadioButton("1");
 		RButtons.add(ch_1);
-		ch_1.setBounds(160, 0, 64, 25);
+		ch_1.setBounds(172, 41, 46, 25);
 		frame.getContentPane().add(ch_1);
 
-		JRadioButton ch_2 = new JRadioButton("ch2");
+		JRadioButton ch_2 = new JRadioButton("2");
 		RButtons.add(ch_2);
-		ch_2.setBounds(160, 60, 64, 25);
+		ch_2.setBounds(171, 123, 64, 25);
 		frame.getContentPane().add(ch_2);
 
 		JButton btnFunction = new JButton("Function");
@@ -82,39 +85,39 @@ public class GUI {
 		btnSwap.setBounds(12, 280, 94, 25);
 		frame.getContentPane().add(btnSwap);
 
-		JRadioButton ch_3 = new JRadioButton("ch3");
+		JRadioButton ch_3 = new JRadioButton("3");
 		RButtons.add(ch_3);
-		ch_3.setBounds(222, 0, 64, 25);
+		ch_3.setBounds(235, 41, 46, 25);
 		frame.getContentPane().add(ch_3);
 
-		JRadioButton ch_4 = new JRadioButton("ch4");
+		JRadioButton ch_4 = new JRadioButton("4");
 		RButtons.add(ch_4);
-		ch_4.setBounds(225, 60, 61, 25);
+		ch_4.setBounds(235, 123, 46, 25);
 		frame.getContentPane().add(ch_4);
 
-		JRadioButton ch_5 = new JRadioButton("ch5");
+		JRadioButton ch_5 = new JRadioButton("5");
 		RButtons.add(ch_5);
-		ch_5.setBounds(284, 0, 64, 25);
+		ch_5.setBounds(296, 41, 52, 25);
 		frame.getContentPane().add(ch_5);
 
-		JRadioButton ch_6 = new JRadioButton("ch6");
+		JRadioButton ch_6 = new JRadioButton("6");
 		RButtons.add(ch_6);
-		ch_6.setBounds(284, 60, 64, 25);
+		ch_6.setBounds(295, 123, 45, 25);
 		frame.getContentPane().add(ch_6);
 
-		JRadioButton ch_7 = new JRadioButton("ch7");
+		JRadioButton ch_7 = new JRadioButton("7");
 		RButtons.add(ch_7);
-		ch_7.setBounds(346, 0, 64, 25);
+		ch_7.setBounds(359, 41, 64, 25);
 		frame.getContentPane().add(ch_7);
 
-		JRadioButton ch_8 = new JRadioButton("ch8");
+		JRadioButton ch_8 = new JRadioButton("8");
 		RButtons.add(ch_8);
-		ch_8.setBounds(347, 60, 63, 25);
+		ch_8.setBounds(360, 123, 52, 25);
 		frame.getContentPane().add(ch_8);
 
 		JTextArea queueScreen = new JTextArea();
 		queueScreen.setEditable(false);
-		queueScreen.setBounds(144, 118, 278, 274);
+		queueScreen.setBounds(145, 170, 278, 274);
 		frame.getContentPane().add(queueScreen);
 
 		JButton btnPrinterPower = new JButton("Printer Power");
@@ -124,16 +127,16 @@ public class GUI {
 				ct.PRINTERPOWER();
 			}
 		});
-		btnPrinterPower.setBounds(482, 41, 157, 25);
+		btnPrinterPower.setBounds(509, 41, 157, 25);
 		frame.getContentPane().add(btnPrinterPower);
 
 		JTextArea printScreen = new JTextArea();
 		printScreen.setEditable(false);
-		printScreen.setBounds(470, 79, 184, 69);
+		printScreen.setBounds(509, 82, 158, 88);
 		frame.getContentPane().add(printScreen);
 
 		JPanel panel = new JPanel();
-		panel.setBounds(485, 224, 143, 136);
+		panel.setBounds(509, 255, 143, 136);
 		frame.getContentPane().add(panel);
 		panel.setLayout(new MigLayout("", "[][][]", "[][][][]"));
 
@@ -185,7 +188,46 @@ public class GUI {
 		JButtons.add(button_11);
 		panel.add(button_11, "cell 2 3");
 
-		JButton btnPower = new JButton("Power");
+
+		JToggleButton tgbCH1 = new JToggleButton("");
+		TGBUttons.add(tgbCH1);
+		tgbCH1.setBounds(172, 4, 38, 25);
+		frame.getContentPane().add(tgbCH1);
+		
+		JToggleButton tgbCH3 = new JToggleButton("");
+		TGBUttons.add(tgbCH3);
+		tgbCH3.setBounds(237, 4, 33, 25);
+		frame.getContentPane().add(tgbCH3);
+		
+		JToggleButton tgbCH5 = new JToggleButton("");
+		TGBUttons.add(tgbCH5);
+		tgbCH5.setBounds(298, 4, 33, 25);
+		frame.getContentPane().add(tgbCH5);
+		
+		JToggleButton tgbCH7 = new JToggleButton("");
+		TGBUttons.add(tgbCH7);
+		tgbCH7.setBounds(358, 4, 33, 25);
+		frame.getContentPane().add(tgbCH7);
+		
+		JToggleButton tgbCH2 = new JToggleButton("");
+		TGBUttons.add(tgbCH2);
+		tgbCH2.setBounds(172, 86, 38, 25);
+		frame.getContentPane().add(tgbCH2);
+		
+		JToggleButton tgbCH4 = new JToggleButton("");
+		TGBUttons.add(tgbCH4);
+		tgbCH4.setBounds(232, 86, 38, 25);
+		frame.getContentPane().add(tgbCH4);
+		
+		JToggleButton tgbCH6 = new JToggleButton("");
+		TGBUttons.add(tgbCH6);
+		tgbCH6.setBounds(293, 86, 38, 25);
+		frame.getContentPane().add(tgbCH6);
+		
+		JToggleButton tgbCH8 = new JToggleButton("");
+		TGBUttons.add(tgbCH8);
+		tgbCH8.setBounds(358, 86, 33, 25);
+		frame.getContentPane().add(tgbCH8);
 
 		for(JButton jb : JButtons) {
 			jb.setEnabled(false);
@@ -193,23 +235,45 @@ public class GUI {
 		for(JRadioButton rb : RButtons) {
 			rb.setEnabled(false);
 		}
+		for(JToggleButton tgb : TGBUttons) {
+			tgb.setEnabled(false);
+		}
 
-		btnPower.addActionListener(new ActionListener() {
+		JToggleButton tglbtnPower = new JToggleButton("Power");
+		tglbtnPower.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ct.POWER();
-				for(JButton jb : JButtons) {
-					jb.setEnabled(true);
+				if(tglbtnPower.isSelected()) {
+					ct.POWER();
+					for(JButton jb : JButtons) {
+						jb.setEnabled(true);
+					}
+					for(JRadioButton rb : RButtons) {
+						rb.setEnabled(true);
+					}
+					for(JToggleButton tgb : TGBUttons) {
+						tgb.setEnabled(true);
+					}
+					queueScreen.setEditable(true);
+					printScreen.setEditable(true);
 				}
-				for(JRadioButton rb : RButtons) {
-					rb.setEnabled(true);
+				else if(!tglbtnPower.isSelected()) {
+					ct.POWER();
+					for(JButton jb : JButtons) {
+						jb.setEnabled(false);
+					}
+					for(JRadioButton rb : RButtons) {
+						rb.setEnabled(false);
+					}
+					for(JToggleButton tgb : TGBUttons) {
+						tgb.setEnabled(false);
+					}
+					queueScreen.setEditable(false);
+					printScreen.setEditable(false);
 				}
-				queueScreen.setEditable(true);
-				printScreen.setEditable(true);
 			}
 		});
-		btnPower.setForeground(Color.BLACK);
-		btnPower.setBounds(12, 25, 94, 25);
-		frame.getContentPane().add(btnPower);
+		tglbtnPower.setBounds(12, 28, 94, 29);
+		frame.getContentPane().add(tglbtnPower);
+		
 	}
-
 }
