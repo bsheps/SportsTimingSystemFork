@@ -20,7 +20,7 @@ public class GUI {
 	private ArrayList<JButton> JButtons;
 	private ArrayList<JRadioButton> RButtons;
 	private ArrayList<JToggleButton> TGBUttons;
-	private ChronoTimer ct;
+	private CommandsInterface commandInt;
 
 	/**
 	 * Launch the application.
@@ -41,8 +41,8 @@ public class GUI {
 	/**
 	 * Create the application.
 	 */
-	public GUI() {
-		ct = new ChronoTimer();
+	public GUI(){
+		commandInt = new ChronoTimer();
 		JButtons = new ArrayList<JButton>();
 		RButtons = new ArrayList<JRadioButton>();
 		TGBUttons = new ArrayList<JToggleButton>();
@@ -80,7 +80,7 @@ public class GUI {
 		JButtons.add(btnSwap);
 		btnSwap.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ct.SWAP();
+				commandInt.SWAP();
 			}
 		});
 		btnSwap.setBounds(12, 366, 94, 25);
@@ -125,7 +125,7 @@ public class GUI {
 		JButtons.add(btnPrinterPower);
 		btnPrinterPower.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				ct.PRINTERPOWER();
+				commandInt.PRINTERPOWER();
 			}
 		});
 		btnPrinterPower.setBounds(509, 41, 157, 25);
@@ -244,7 +244,7 @@ public class GUI {
 		tglbtnPower.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(tglbtnPower.isSelected()) {
-					ct.POWER();
+					commandInt.POWER();
 					for(JButton jb : JButtons) {
 						jb.setEnabled(true);
 					}
@@ -258,7 +258,7 @@ public class GUI {
 					printScreen.setEditable(true);
 				}
 				else if(!tglbtnPower.isSelected()) {
-					ct.POWER();
+					commandInt.POWER();
 					for(JButton jb : JButtons) {
 						jb.setEnabled(false);
 					}
